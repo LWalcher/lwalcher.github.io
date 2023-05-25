@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Seminar Github Copilot"
+title                    : "Seminar Recent Application of Deep Learning"
 title_separator          : "-"
 name                     : &name "Lukas Walcher"
 description              : &description "University of Stuttgart"
