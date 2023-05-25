@@ -16,13 +16,14 @@ What is GitHub Copilot?
 ======
 General introduction to the topic featuring terms, definitions and the current state of GitHub copilot
 
-How To Use GitHub Copilot
+How does Deep Learning help with software development?
 ======
-Short explanation of GitHub Copilots use case and how to use it
-
-Benefit from GitHub Copilot as a Developer
-======
+How can this problem be mapped to a DL problem? inputs?, outputs?, loss?, etc.
 How does GitHub advertise their product? Why should you use it as a developer?
+
+How does GitHub Copilot work?
+======
+Describing what DL method is used and how github copilot generates code
 
 Influence of GitHub Copilot on productivity
 ======
