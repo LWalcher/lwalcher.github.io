@@ -7,6 +7,8 @@ tags:
   - research
 ---
 
+A blog post about GitHub Copilot and its approach to improve productivity in software development using deep learning.
+
 Github Copilot
 ======
 
