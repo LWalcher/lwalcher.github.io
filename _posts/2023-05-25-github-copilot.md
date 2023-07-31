@@ -35,6 +35,9 @@ The treated group was given a 1-minute demo video and a setup guide for GitHub C
 
 Of the 45 developers in the treated group and the 50 in the control group, 35 each completed the task and the surveys. Most participants were between the age of 25 to 34 age group and came from India and Pakistan, with relatively lower income but higher education levels. On average, they had six years of coding experience and spent about nine hours daily on coding.
 
+![Time to complete the task](/_posts/timecompleted.png "Time to complete the task")
+  > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 6: Time to complete the task
+
 The treated group, using GitHub Copilot, completed the task in an average of 71.17 minutes, while the control group took 160.89 minutes. Therefore, the treated group completed the task 55,8% faster. It can also be mentioned that the treated group's success rate was 7 percentage points higher than the control group, although this difference was not statistically significant. 
 Taking the demographic information into account, further analysis showed that less experienced developers, those with heavier daily coding loads, and older developers benefited more from using Copilot.
 
