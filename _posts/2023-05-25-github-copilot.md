@@ -1,6 +1,6 @@
 ---
 title: 'GitHub Copilot'
-date: 2023-05-25
+date: 2023-07-31
 permalink: /posts/2023/05/github-copilot/
 tags:
   - github copilot
