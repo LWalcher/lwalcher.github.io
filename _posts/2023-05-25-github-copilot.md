@@ -43,7 +43,7 @@ Of the 45 developers in the treated group and the 50 in the control group, 35 ea
 
 The treated group, using GitHub Copilot, completed the task in an average of 71.17 minutes, while the control group took 160.89 minutes. Therefore, the treated group completed the task 55,8% faster. It can also be mentioned that the treated group's success rate was 7 percentage points higher than the control group, although this difference was not statistically significant. 
 
-![Time to complete the task](/_posts/timecompleted.png "Time to complete the task")
+![Time to complete the task](/images/timecompleted.png "Time to complete the task")
   > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 6: Time to complete the task
 
 Taking the demographic information into account, further analysis showed that less experienced developers, those with heavier daily coding loads, and older developers benefited more from using Copilot.
