@@ -1,5 +1,5 @@
 ---
-title: 'GitHub Copilot'
+title: 'Recent Applications of Machine Learning - GitHub Copilot'
 date: 2023-07-31
 permalink: /posts/2023/05/github-copilot/
 tags:
