@@ -30,32 +30,42 @@ Describing what DL method is used and how github copilot generates code
 Influence of GitHub Copilot on productivity
 ======
 To investigate GitHub Copilots influence on the productivity of software developers a research team consisting of Sida Peng (Microsoft Research), Eirini Kalliamvakou (GitHub Inc.), Peter Cihon (GitHub Inc.) and Mert Demirer (MIT Sloan School of Management) conducted a [study](https://arxiv.org/abs/2302.06590) with 95 participants. The study took place between May 15 and June 20 of 2022 and claimed to be one of the first studies regarding the effects of GitHub Copilot, which was released in October 2021. 
-The participants were randomly divided into two groups: the treated group, which had access to GitHub Copilot, and the control group, which was not allowed to use the tool. Before the experiment, demographic information on the groups was gathered via an entry survey. 
+
+**Study Design.** The participants were randomly divided into two groups: the treated group, which had access to GitHub Copilot, and the control group, which was not allowed to use the tool. Before the experiment, demographic information on the groups was gathered via an entry survey. 
 The treated group was given a 1-minute demo video and a setup guide for GitHub Copilot. Both groups were instructed to complete a task of writing a simple HTTP server in JavaScript.  The researchers measured task success and completion time as performance metrics for each group with the experiment starting at the time the repository was created. GitHub Classroom, a platform for coding assignments, was provided to complete the task and give access to a test suite to validate the participants submissions. To complete the task, the application had to pass 12 tests. A fast completion time would reward the participants with a higher monetary compensation. After the experiment, participants were asked to supply feedback on the usefulness of GitHub Copilot. For this exit survey both, the treated and control group, should give an estimation of the productivity gain through Copilot.
 
-Of the 45 developers in the treated group and the 50 in the control group, 35 each completed the task and the surveys. Most participants were between the age of 25 to 34 age group and came from India and Pakistan, with relatively lower income but higher education levels. On average, they had six years of coding experience and spent about nine hours daily on coding.
+**Results.** Of the 45 developers in the treated group and the 50 in the control group, 35 each completed the task and the surveys. The demographic information gathered from these surveys is important for classifying further results and is shown below.
 
 ![Experience of the participants](/images/demogr1.png "Experience of the participants")
 
 ![Origins of the participants](/images/demogr2.png "Origins of the participants")
-  > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 5: Summary statistics of the experiment
+> The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 5: Summary statistics of the experiment
+
+Most participants were between the age of 25 to 34 age group and came from India and Pakistan, with relatively lower income compared to the US. The participants had high education levels with the largest group having a 4 year degree and the second largest with a professional degree. The majority was either employed or self-employed. On average, they had six years of coding experience and spent about nine hours daily on coding.
 
 
-The treated group, using GitHub Copilot, completed the task in an average of 71.17 minutes, while the control group took 160.89 minutes. Therefore, the treated group completed the task 55,8% faster. It can also be mentioned that the treated group's success rate was 7 percentage points higher than the control group, although this difference was not statistically significant. 
+
+The treated group, using GitHub Copilot, completed the task in an average of 71.17 minutes, while the control group took 160.89 minutes. Therefore, the treated group completed the task 55,8% faster. The results are shown in the following image.
 
 ![Time to complete the task](/images/timecompleted.png "Time to complete the task")
   > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 6: Time to complete the task
-
-Taking the demographic information into account, further analysis showed that less experienced developers, those with heavier daily coding loads, and older developers benefited more from using Copilot.
+  > 
+  > Note: There is no information about the brown elements of the bar chart in the paper featuring the study, but it can be assumed that they depict participants, who have not completed the task successfully.
+> 
+It can also be mentioned that the treated group's success rate was 7 percentage points higher than the control group, although this difference was not statistically significant. 
+Taking the demographic information into account, an analysis was done to see if there is a specific group that benefits more than others from Copilot. The results are shown in the table below.
 
 ![Heterogeneous Treatment Effects](/images/table.png "Heterogeneous Treatment Effects")
   > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Table 1: Heterogeneous Treatment Effects
 
-The exit survey revealed that both groups underestimated the productivity gain from using Copilot, with an average estimated increase of 35% compared to the actual 55.8% increase. 
+According to these findings less-experienced developers, developers with many hours of coding per day and developers in the age group 25-44 benefit the most from Copilot.
+Finally, the participants had to give a self-estimation on the benefits of Copilot. The following figure shows, how much productivity gain each participant anticipated when using this tool.
 
 ![Anticipated Productivity](/images/productivity.png "Anticipated Productivity")
   > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 7: Self-estimated productivity gain
 
+Surprisingly even a large part of the control group expected a 50% increase in productivity. But in both groups there were also participants, who claimed that Copilot has a negative impact on productivity.
+Overall the exit survey revealed that both groups underestimated the productivity gain from using Copilot, with an average estimated increase of 35% compared to the actual 55.8% increase that resulted from the experiment. 
 
 Discussion
 ======
