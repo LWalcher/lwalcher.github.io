@@ -12,16 +12,31 @@ A blog post about GitHub Copilot and its approach to improve productivity in sof
 Github Copilot
 ======
 
-Features paper: https://arxiv.org/abs/2302.06590
-
-What is GitHub Copilot?
-======
-General introduction to the topic featuring terms, definitions and the current state of GitHub copilot
+GitHub Copilot is an innovative "AI pair programmer" tool developed collaboratively by GitHub and OpenAI. It was officially released in October 2021 and offers a powerful code autocompletion and suggestion system. Copilot is compatible with various integrated development environments (IDEs) such as Visual Studio, Visual Studio Code, and IDEs from the JetBrains family. It is suited best for coding in Python, JavaScript, TypeScript, Ruby and Go. 
 
 How does Deep Learning help with software development?
 ======
-How can this problem be mapped to a DL problem? inputs?, outputs?, loss?, etc.
-How does GitHub advertise their product? Why should you use it as a developer?
+To understand how deep learning can be applied to software development, it is important to understand the basic concept of deep learning. Deep learning is part of the machine learning field. It utilizes a neural network, that tries to mimic the human brain using a combination of data inputs, weights, and bias. Deep neural networks are composed of multiple interconnected layers of nodes, with each layer refining and optimizing predictions or categorizations from the previous layer. This progression of computations is known as forward propagation. The visible layers in a deep neural network are the input and output layers. The input layer receives the data for processing, while the output layer generates the final prediction or classification.
+To train the model, a process called backpropagation employs algorithms like gradient descent to compute prediction errors and adjust the weights and biases by moving backward through the layers. This iterative process allows the neural network to make predictions and correct errors progressively, leading to increased accuracy over time. 
+An important metric for this process is the loss function. It measures the error between predicted values and the actual or expected values. The goal of training the model is to minimize the output of the loss function or in other words: Given any input the model will accurately provide a corresponding output.
+How can this be applied to software development? A programmer typically does not “reinvent the wheel”. Although there will always be new and innovative algorithms, they can always be broken down to smaller problems. At that point there is a high chance, that this problem has already been solved by someone. Thanks to platforms like GitHub and Stack Overflow, software developers have unlimited access to code snippets and answers to common coding challenges. Combined with personal experience, these problems can then be solved. To depict this as a deep learning model, we need to define our inputs, outputs, and our loss function. The following illustration provides a simple example of such a model.
+
+
+![Example Neural Network](/images/network.png "Example Neural Network")
+
+In the input layer the model is provided with a code snippet representing the current problem. E.g. the Java code:
+
+  `public void printHelloWorld(){`
+
+Then the model will, if thoroughly trained, understand the context of these lines of code, while passing the input data through various hidden layers and generate the following output:
+
+`public void printHelloWorld(){
+  System.out.println("Hello World");
+`
+
+Achieving good results requires extensive training of the model. For this use case it a large amount of code snippets and their completed counterparts are necessary as prerequesites. Additionally, a loss function must be defined, so that its values are minimized, when the predicted code is semantically and syntactically equal to the expected code. How GitHub Copilot managed to achieve this, will be shown in the following section.
+
+
 
 How does GitHub Copilot work?
 ======
