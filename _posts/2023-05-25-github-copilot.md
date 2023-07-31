@@ -41,7 +41,8 @@ Achieving good results requires extensive training of the model. For this use ca
 How does GitHub Copilot work?
 ======
 GitHub Copilot is developed using OpenAI's Codex, which is a variant of the Generative Pre-trained Transformer (GPT) architecture. It is a deep learning model, specifically a transformer model. The underlying model is trained on a combination of natural language data and billions of lines of source code. 
-To fully grasp how GitHub Copilot works, it's essential to understand the GPT architecture. Similar to our example neural network above, GPT is a model trained to predict an output based on a given input. How this is precisely achieved, will be covered in the following.  
+To fully grasp how GitHub Copilot works, it's essential to understand the GPT architecture. Similar to our example neural network above, GPT is a model trained to predict an output based on a given input. How this is precisely achieved, will be covered in the following. 
+The input 
 
 The encoder stack processes the input data in parallel using self-attention mechanisms. Each element in the input sequence attends to all other elements, allowing the model to learn contextual relationships efficiently. The encoder stack comprises multiple layers, each consisting of self-attention and feedforward neural networks. These layers enable the model to capture long-range dependencies and complex patterns in the data.
 
@@ -87,7 +88,7 @@ The treated group, using GitHub Copilot, completed the task in an average of 71.
   > The Impact of AI on Developer Productivity: Evidence from GitHub Copilot, Figure 6: Time to complete the task
   > 
   > Note: There is no information about the brown elements of the bar chart in the paper featuring the study, but it can be assumed that they depict participants, who have not completed the task successfully.
-> 
+
 It can also be mentioned that the treated group's success rate was 7 percentage points higher than the control group, although this difference was not statistically significant. 
 Taking the demographic information into account, an analysis was done to see if there is a specific group that benefits more than others from Copilot. The results are shown in the table below.
 
