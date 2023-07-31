@@ -40,7 +40,28 @@ Achieving good results requires extensive training of the model. For this use ca
 
 How does GitHub Copilot work?
 ======
-Describing what DL method is used and how github copilot generates code
+GitHub Copilot is developed using OpenAI's Codex, which is a variant of the Generative Pre-trained Transformer (GPT) architecture. It is a deep learning model, specifically a transformer model. The underlying model is trained on a combination of natural language data and billions of lines of source code. 
+To fully grasp how GitHub Copilot works, it's essential to understand the GPT architecture. Similar to our example neural network above, GPT is a model trained to predict an output based on a given input. How this is precisely achieved, will be covered in the following.  
+
+The encoder stack processes the input data in parallel using self-attention mechanisms. Each element in the input sequence attends to all other elements, allowing the model to learn contextual relationships efficiently. The encoder stack comprises multiple layers, each consisting of self-attention and feedforward neural networks. These layers enable the model to capture long-range dependencies and complex patterns in the data.
+
+The decoder stack is used in sequence-to-sequence tasks, such as language translation. It generates the output sequence step by step, attending to the encoded input data and using self-attention to learn contextual information for each output element.
+
+The key to the transformer architecture's success is its ability to process data in parallel, making it more efficient than traditional sequential models like recurrent neural networks (RNNs). This parallel processing, achieved through self-attention, allows the transformer to handle long-range dependencies in the data and has made it the backbone of many state-of-the-art language models and other natural language processing applications.
+
+| \<s\> | we | all | live | in | a | yellow |
+|-----|----|-----|------|----|-----|----|
+|  0   |  1  |  2  |  3  |  4  |  5   |  6  |
+
+The encoder stack processes the input data in parallel using self-attention mechanisms. Each element in the input sequence attends to all other elements, allowing the model to learn contextual relationships efficiently. The encoder stack comprises multiple layers, each consisting of self-attention and feedforward neural networks. These layers enable the model to capture long-range dependencies and complex patterns in the data.
+
+
+
+![GPT Architecture](/images/gpt.png "GPT Architecture")
+
+The decoder stack is used in sequence-to-sequence tasks, such as language translation. It generates the output sequence step by step, attending to the encoded input data and using self-attention to learn contextual information for each output element.
+
+The key to the transformer architecture's success is its ability to process data in parallel, making it more efficient than traditional sequential models like recurrent neural networks (RNNs). This parallel processing, achieved through self-attention, allows the transformer to handle long-range dependencies in the data and has made it the backbone of many state-of-the-art language models and other natural language processing applications.
 
 Influence of GitHub Copilot on productivity
 ======
@@ -96,5 +117,5 @@ The experiment involved a very basic programming task, which may not fully repre
 
 Conclusion
 ======
-GitHub Copilot demonstrates that deep learning can support software development. It shows the potential of AI in complementing programmers rather than replacing them entirely. The affordability of the tool is also noteworthy, with pricing set at $10 per month for individual users and $19 per month per user for businesses, making it accessible to a wide range of developers. However, it is essential to approach the study's reported 55.8% increase in productivity with caution due to the study's specific design and potential limitations. Even though Copilot appears to be a useful and promising tool, further research and real-world applications are necessary to fully investigate the true impact of GitHub Copilot on productivity in software development.
+GitHub Copilot demonstrates that deep learning can support software development. It shows the potential of AI in complementing programmers rather than replacing them entirely. The affordability of the tool is also noteworthy, with pricing set at \$10 per month for individual users and \$19 per month per user for businesses, making it accessible to a wide range of developers. However, it is essential to approach the study's reported 55.8% increase in productivity with caution due to the study's specific design and potential limitations. Even though Copilot appears to be a useful and promising tool, further research and real-world applications are necessary to fully investigate the true impact of GitHub Copilot on productivity in software development.
 
