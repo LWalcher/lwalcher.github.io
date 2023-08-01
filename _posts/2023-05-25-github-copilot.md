@@ -40,29 +40,37 @@ Achieving good results requires extensive training of the model. For this use ca
 
 How does GitHub Copilot work?
 ======
-GitHub Copilot is developed using OpenAI's Codex, which is a variant of the Generative Pre-trained Transformer (GPT) architecture. It is a deep learning model, specifically a transformer model. The underlying model is trained on a combination of natural language data and billions of lines of source code. 
-To fully grasp how GitHub Copilot works, it's essential to understand the GPT architecture. Similar to our example neural network above, GPT is a model trained to predict an output based on a given input. How this is precisely achieved, will be covered in the following. 
-The input 
-
-The encoder stack processes the input data in parallel using self-attention mechanisms. Each element in the input sequence attends to all other elements, allowing the model to learn contextual relationships efficiently. The encoder stack comprises multiple layers, each consisting of self-attention and feedforward neural networks. These layers enable the model to capture long-range dependencies and complex patterns in the data.
-
-The decoder stack is used in sequence-to-sequence tasks, such as language translation. It generates the output sequence step by step, attending to the encoded input data and using self-attention to learn contextual information for each output element.
-
-The key to the transformer architecture's success is its ability to process data in parallel, making it more efficient than traditional sequential models like recurrent neural networks (RNNs). This parallel processing, achieved through self-attention, allows the transformer to handle long-range dependencies in the data and has made it the backbone of many state-of-the-art language models and other natural language processing applications.
+GitHub Copilot is developed using OpenAI's Codex, which is a variant of the Generative Pre-trained Transformer (GPT) architecture. It is a deep learning model, specifically a transformer model. The underlying model is trained on a combination of natural language data and billions of lines of source code from GitHub. 
+To fully grasp how GitHub Copilot works, it's essential to understand the GPT (GPT-3) architecture. Similar to our example neural network above, GPT's model has an input and an output layer. The input is handled as a set of tokens in a sequence. Given the text *We all live in a* produces the following table-like data.
 
 | \<s\> | we | all | live | in | a | yellow |
 |-----|----|-----|------|----|-----|----|
 |  0   |  1  |  2  |  3  |  4  |  5   |  6  |
 
-The encoder stack processes the input data in parallel using self-attention mechanisms. Each element in the input sequence attends to all other elements, allowing the model to learn contextual relationships efficiently. The encoder stack comprises multiple layers, each consisting of self-attention and feedforward neural networks. These layers enable the model to capture long-range dependencies and complex patterns in the data.
+GPT then predicts the next token in this sequence. The output layer receives a set of guesses with their corresponding probabilities. In this example an output could look like this:
+
+- submarine (90%)
+- taxi (5%)
+- banana (1%)
+- ...
+
+These layers are what the user typically interacts with. When looking at the following figure, it becomes clear how many steps are actually necessary in between.
+
+![GPT Architecture](/images/gpt2.png "GPT Architecture")
+  > Radford, A., Narasimhan, K., Salimans, T. and Sutskever, I., 2018. Improving language understanding by generative pre-training, Figure 1: The transformer - model architecture
+
+The first step is the encoding of the input. The input sequence's size is fixed to 2048 tokens. In our example above all remaining positions would be filled with empty values. To process this sequence of tokens they will then be translated to a vector of numbers. In order to do that GPT has a vocabulary of 50257 tokens, represented as a vector. Each token is represented by a 50257 long vector with all values set to 0, except the position of the token in the vocabulary, which is set to 1. It is worth noting, that these tokens are not full words, but group of characters that appear often in texts. The result of the encoding is a 2048x50257 matrix of ones and zeroes.
+As a next step input embedding is necessary to process this large data set. Embeddings are provided as a matrix in the model, representing weights learned during training. These embeddings capture semantic relationships and help the model make accurate predictions in various language tasks. This is achieved by multiplying those 2 matrices.
+Next up positional encoding is performed through which the model can understand the sequential order of the tokens. This is followed by Multi-Head Attention. Attention in general predicts which input tokens to focus on and their importance for each output in the sequence. It involves learning three weight matrices (queries, keys, values) to transform sequence embeddings. By multiplying the queries and keys matrices, it calculates the importance of each token to others, resulting in a matrix that influences the weighted mix of token values. For Multi-Head attemption this process is repeated 96 times. This allows the model to understand contextual relationships between tokens in the sequence. The process continues with Feed Forward, which is a multi-layer-perceptron with one hidden layer. It multiplies the input with learned weights, adds the learned bias and multiplies it with weights a second time. After each of the last two steps, Add & Norm is performed which adds the input of the current step with its output and normalizes the result.
+After passing through all these steps, the input is transformed into a 2048 x 12288 matrix, with each position containing information about which token should appear in the sequence. To extract this information, the model reverses the mapping used in the embedding section to transform the output matrix back into a word encoding. By using softmax, the values are treated as probabilities for each word.
+
+Utilizing this powerful model architecture and the extensive training GitHub Copilot is able to provide relevant completions, functions, or even whole code blocks. The following picture shows an example of Copilot providing unit tests for a given method.
 
 
+![Copilot Example](/images/copilot.png "Copilot Example")
+> https://github.com/features/ GitHub Copilot Example
 
-![GPT Architecture](/images/gpt.png "GPT Architecture")
-
-The decoder stack is used in sequence-to-sequence tasks, such as language translation. It generates the output sequence step by step, attending to the encoded input data and using self-attention to learn contextual information for each output element.
-
-The key to the transformer architecture's success is its ability to process data in parallel, making it more efficient than traditional sequential models like recurrent neural networks (RNNs). This parallel processing, achieved through self-attention, allows the transformer to handle long-range dependencies in the data and has made it the backbone of many state-of-the-art language models and other natural language processing applications.
+The user is also able to provide feedback to Copilot to further improve and personalize suggestions.
 
 Influence of GitHub Copilot on productivity
 ======
@@ -119,4 +127,12 @@ The experiment involved a very basic programming task, which may not fully repre
 Conclusion
 ======
 GitHub Copilot demonstrates that deep learning can support software development. It shows the potential of AI in complementing programmers rather than replacing them entirely. The affordability of the tool is also noteworthy, with pricing set at \$10 per month for individual users and \$19 per month per user for businesses, making it accessible to a wide range of developers. However, it is essential to approach the study's reported 55.8% increase in productivity with caution due to the study's specific design and potential limitations. Even though Copilot appears to be a useful and promising tool, further research and real-world applications are necessary to fully investigate the true impact of GitHub Copilot on productivity in software development.
+
+Sources
+=======
+1. Peng, S., Kalliamvakou, E., Cihon, P. and Demirer, M., 2013 [The Impact of AI on Developer Productivity: Evidence from GitHub Copilot](https://arxiv.org/abs/2302.06590)
+2. [GitHub Website](https://github.com/features/)
+3. Radford, A., Narasimhan, K., Salimans, T. and Sutskever, I., 2018. [Improving language understanding by generative pre-training](https://www.cs.ubc.ca/~amuham01/LING530/papers/radford2018improving.pdf)
+4. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. and Sutskever, I., 2019. [Language models are unsupervised multitask learners](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+5. Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J.D., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A. and Agarwal, S., 2020. [Language models are few-shot learners. Advances in neural information processing systems](https://arxiv.org/pdf/2005.14165.pdf)
 
