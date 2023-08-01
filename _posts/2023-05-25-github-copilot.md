@@ -126,7 +126,7 @@ The experiment involved a very basic programming task, which may not fully repre
 
 Conclusion
 ======
-GitHub Copilot demonstrates that deep learning can support software development. It shows the potential of AI in complementing programmers rather than replacing them entirely. The affordability of the tool is also noteworthy, with pricing set at \$10 per month for individual users and \$19 per month per user for businesses, making it accessible to a wide range of developers. However, it is essential to approach the study's reported 55.8% increase in productivity with caution due to the study's specific design and potential limitations. Even though Copilot appears to be a useful and promising tool, further research and real-world applications are necessary to fully investigate the true impact of GitHub Copilot on productivity in software development.
+GitHub Copilot demonstrates that deep learning can support software development. It shows the potential of AI in complementing programmers rather than replacing them entirely. The affordability of the tool is also noteworthy, with pricing set at 10 dollars per month for individual users and 19 dollars per month per user for businesses, making it accessible to a wide range of developers. However, it is essential to approach the study's reported 55.8% increase in productivity with caution due to the study's specific design and potential limitations. Even though Copilot appears to be a useful and promising tool, further research and real-world applications are necessary to fully investigate the true impact of GitHub Copilot on productivity in software development.
 
 Sources
 =======
